@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/manoleaioan/portfolio/static/css/main.beee0136.chunk.css",
+    "main.js": "/manoleaioan/portfolio/static/js/main.3a42a82f.chunk.js",
+    "main.js.map": "/manoleaioan/portfolio/static/js/main.3a42a82f.chunk.js.map",
+    "runtime-main.js": "/manoleaioan/portfolio/static/js/runtime-main.d78bddb6.js",
+    "runtime-main.js.map": "/manoleaioan/portfolio/static/js/runtime-main.d78bddb6.js.map",
+    "static/js/2.39472984.chunk.js": "/manoleaioan/portfolio/static/js/2.39472984.chunk.js",
+    "static/js/2.39472984.chunk.js.map": "/manoleaioan/portfolio/static/js/2.39472984.chunk.js.map",
+    "static/js/3.cee9f541.chunk.js": "/manoleaioan/portfolio/static/js/3.cee9f541.chunk.js",
+    "static/js/3.cee9f541.chunk.js.map": "/manoleaioan/portfolio/static/js/3.cee9f541.chunk.js.map",
+    "index.html": "/manoleaioan/portfolio/index.html",
+    "static/css/main.beee0136.chunk.css.map": "/manoleaioan/portfolio/static/css/main.beee0136.chunk.css.map",
+    "static/js/2.39472984.chunk.js.LICENSE.txt": "/manoleaioan/portfolio/static/js/2.39472984.chunk.js.LICENSE.txt",
+    "static/media/PolyRectangle.2c8d5b11.svg": "/manoleaioan/portfolio/static/media/PolyRectangle.2c8d5b11.svg",
+    "static/media/crown.3a4e2b15.svg": "/manoleaioan/portfolio/static/media/crown.3a4e2b15.svg",
+    "static/media/logo2.a487c2cf.svg": "/manoleaioan/portfolio/static/media/logo2.a487c2cf.svg",
+    "static/media/profilePic.b4f54971.png": "/manoleaioan/portfolio/static/media/profilePic.b4f54971.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d78bddb6.js",
+    "static/js/2.39472984.chunk.js",
+    "static/css/main.beee0136.chunk.css",
+    "static/js/main.3a42a82f.chunk.js"
+  ]
+}
