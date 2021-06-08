@@ -1,0 +1,120 @@
+#skills {
+  flex-direction: column;
+  
+  #cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+      width:100%;
+      min-width: 300px;
+      height: 334px;
+      
+      padding-bottom:40px;
+      background: #ffffff;
+      box-shadow: 0px 6px 15px 8px rgba(0, 0, 0, 0.04);
+      //border: 1px solid #f1f1f1;
+      border-radius: 7px;
+      margin: 70px 0 70px 0;
+
+      h2 {
+        color: #474747;
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        margin-top: 44px;
+        margin-bottom: 40px;
+      }
+
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -62px;
+      }
+
+      .ico {
+        color: rgb(253, 183, 25);
+        top: unset;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 40px;
+        svg {
+          position: relative;
+        }
+      }
+
+      ul {
+        font-family: DM Mono;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        white-space: normal;
+
+        text-align: left;
+        list-style-type: none;
+        width: 82%;
+        margin: 0 auto;
+
+        li {
+          display: flex;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          white-space: normal !important;
+          align-items: baseline;
+          margin-bottom: 10px;
+
+          span {
+            padding-left: 15px;
+            width: 80%;
+          }
+
+          svg{
+            color: #ffffff;
+            background: #fdb719;
+            border-radius: 50%;
+            padding: 3px;
+            bottom: 12;
+            font-size: 13px;
+            position: relative;
+            top: 3px;
+        
+          }
+        }
+      }
+    }
+  }
+
+
+  @media (min-width: 787px) {
+    #cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      .card {
+        .ico {
+          left: unset;
+          right: unset;
+        }
+        width: 100%;
+        max-width: 334px;
+        margin: 70px 1% 70px 1%;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #cards {
+      flex-wrap: nowrap;
+      .card {
+        width: 334px;
+        max-width: unset;
+      }
+      justify-content: space-between;
+    }
+  }
+}

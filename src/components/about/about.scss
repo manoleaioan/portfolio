@@ -1,0 +1,54 @@
+#about {
+  align-content: center;
+  flex-direction: column;
+  
+  p {
+    font-family: DM Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: justify;
+    margin-bottom: 15px;
+    letter-spacing: -0.08em;
+    color: #696969;
+
+    span {
+      display: inline-block;
+      margin-left: 4%;
+    }
+  }
+
+  button {
+    border: 1px solid #fdb719;
+    box-sizing: border-box;
+    border-radius: 29px;
+    width: 151px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #fdb719;
+    background: #fff;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-top: 30px;
+    outline: none;
+    transition: 0.5s;
+
+    &:hover {
+      color: #fff;
+      background-color: #fdb719;
+    }
+  }
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 19px;
+      line-height: 30px;
+      letter-spacing: -0.04em;
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Manolea Ioan",
+  "name": "Manolea Ioan Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,9 +8,29 @@
       "type": "image/x-icon"
     },
     {
+      "src": "logo16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "logo132.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "logo150.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
     },
     {
       "src": "logo512.png",

@@ -1,0 +1,138 @@
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 478px;
+  margin: 0 auto;
+
+  #top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #aw {
+    width: 284px;
+    height: 71px;
+    background: linear-gradient(0deg, #ffffff, #ffffff);
+    border: 1px solid #fdb719;
+    box-sizing: border-box;
+    border-radius: 36px 36px 36px 0;
+    display: flex;
+    align-items: center;
+    font-family: DM Mono;
+    font-size: 15px;
+    margin-bottom: 30px;
+    align-self: flex-start;
+    justify-content: center;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 7px;
+      width: 320px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 20px;
+
+      h2 {
+        font-family: Poppins;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+      }
+
+      svg {
+        font-size: 56px;
+        color: #fdb719;
+        padding: 0 14px 0 20px;
+        height: 80px;
+      }
+
+      p {
+        font-size: 13px;
+        color: #8b8b8b;
+        font-weight: 500;
+        margin-top: -5px;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+
+  #copyright {
+    width: 197px;
+    height: 37px;
+    background: #fdb719;
+    border: 1px solid #fdb719;
+    box-sizing: border-box;
+    border-radius: 16px 16px 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ubuntu;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #ffffff;
+    align-self: flex-end;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: unset;
+
+    #top {
+      flex-direction: column-reverse;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        width: 235px;
+        height: 186px;
+        margin-right: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        svg{
+          padding: unset;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+
+    #aw{
+      align-self: unset;
+      width: 607px;
+      border-radius: 0px 36px 36px 36px;
+      margin-top: 26px;
+    }
+
+    #copyright {
+      align-self: unset;
+    }
+  }
+}
