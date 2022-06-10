@@ -24,7 +24,7 @@ const Contact = () => (
             <FontAwesomeIcon icon={faEnvelope} />
             <div>
               <h2>Mail</h2>
-              <a href="mailto:ioanmanolea@gmail.com?subject=contact">
+              <a target="_blank" href="mailto:ioanmanolea@gmail.com?subject=contact">
                 <p>ioanmanolea@gmail.com</p>
               </a>
             </div>
@@ -46,7 +46,7 @@ const Contact = () => (
             <FontAwesomeIcon icon={faLinkedinIn} />
             <div>
               <h2>LikedIn</h2>
-              <a href='https://www.linkedin.com/in/ioan.manolea'><p>https://www.linkedin.com/in/ioan.manolea</p></a>
+              <a target="_blank" href='https://www.linkedin.com/in/manolea-ioan-91b683241'><p>https://www.linkedin.com/in/manolea-ioan-91b683241</p></a>
             </div>
           </li>
         </Flip>
@@ -55,7 +55,7 @@ const Contact = () => (
 
     <Fade bottom delay={100} delay={500}>
       <div id="copyright">
-        Manolea Ioan @2021
+        Manolea Ioan @2022
     </div>
     </Fade>
   </div>

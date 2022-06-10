@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './content.scss';
 
 import Hero from "../hero/Hero";
@@ -9,6 +9,11 @@ import Contact from '../contact/Contact';
 
 
 const Content = () => {
+	useEffect(() => {
+		fetch('https://chatapp-mysql.herokuapp.com/');
+		fetch('https://strength-workout.herokuapp.com/');
+	}, []);
+
 	return (
 		<main className="content">
 			<Hero />
