@@ -13,41 +13,45 @@ const Contact = () => (
     <h2>Contact</h2>
 
     <div id="top">
-      <Fade top  delay={500}>
+      <Fade top delay={500}>
         <div id="aw">
           I’m currently available for work. Let’s get in touch!
-      </div>
+        </div>
       </Fade>
       <ul>
         <Flip left delay={200}>
           <li>
-            <FontAwesomeIcon icon={faEnvelope} />
-            <div>
-              <h2>Mail</h2>
-              <a target="_blank" href="mailto:ioanmanolea@gmail.com?subject=contact">
+            <a target="_blank" href="mailto:ioanmanolea@gmail.com?subject=contact">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <div>
+                <h2>Mail</h2>
                 <p>ioanmanolea@gmail.com</p>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
         </Flip>
 
         <Flip bottom delay={200}>
           <li>
-            <FontAwesomeIcon icon={faPhoneAlt} />
-            <div>
-              <h2>Phone</h2>
-              <a href='tel:+40748495960'><p>+40 748 495 960</p></a>
-            </div>
+            <a href='tel:+40748495960'>
+              <FontAwesomeIcon icon={faPhoneAlt} />
+              <div>
+                <h2>Phone</h2>
+                <p>+40 748 495 960</p>
+              </div>
+            </a>
           </li>
         </Flip>
 
         <Flip right delay={200}>
           <li>
-            <FontAwesomeIcon icon={faLinkedinIn} />
-            <div>
-              <h2>LikedIn</h2>
-              <a target="_blank" href='https://www.linkedin.com/in/manolea-ioan-91b683241'><p>https://www.linkedin.com/in/manolea-ioan-91b683241</p></a>
-            </div>
+            <a target="_blank" href='https://www.linkedin.com/in/manoleaioan'>
+              <FontAwesomeIcon icon={faLinkedinIn} />
+              <div>
+                <h2>LikedIn</h2>
+                <p>https://www.linkedin.com/in/manoleaioan</p>
+              </div>
+            </a>
           </li>
         </Flip>
       </ul>
@@ -56,7 +60,7 @@ const Contact = () => (
     <Fade bottom delay={100} delay={500}>
       <div id="copyright">
         Manolea Ioan @2022
-    </div>
+      </div>
     </Fade>
   </div>
 )

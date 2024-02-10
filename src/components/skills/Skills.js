@@ -22,10 +22,10 @@ const Skills = () => (
           <h2>Frontend</h2>
 
           <ul>
-            <li><FontAwesomeIcon icon={faCheck} /><span>React/Redux</span></li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>HTML/CSS/SASS/BOOTSTRAP/MATERIAL UI</span> </li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Javascript</span></li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>NodeJs</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>React & Angular</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>VanillaJs/Ts</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Responsive Web Design</span> </li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Redux</span></li>
           </ul>
         </div>
       </Fade>
@@ -41,11 +41,10 @@ const Skills = () => (
           <h2>Backend</h2>
 
           <ul>
-            <li><FontAwesomeIcon icon={faCheck} /><span>PostgresSQL/MySQL</span></li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>MongoDB</span> </li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Php</span></li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Express</span></li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Firebase</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>NojeJs & Express</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>C# ASP.NET</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Firebase, MongoDB</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Php/MySQL</span></li>
           </ul>
         </div>
       </Fade>
@@ -61,8 +60,8 @@ const Skills = () => (
 
           <ul>
             <li><FontAwesomeIcon icon={faCheck} /><span>GitHub/Heroku</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Docker</span></li>
             <li><FontAwesomeIcon icon={faCheck} /><span>Photoshop/Figma</span> </li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Unit Testing</span></li>
             <li><FontAwesomeIcon icon={faCheck} /><span>Lua/C#/Python</span></li>
           </ul>
         </div>
