@@ -23,17 +23,19 @@ import RecoLetter from '../../assets/Reccommendation_Letter_-_Yionutz.pdf';
 
 const Portfolio = () => (
   <div id="portfolio">
-    <h2>Portfolio</h2>
+    <Fade bottom>
+      <h2>Portfolio</h2>
+    </Fade>
     <div id="cards">
       <Fade bottom>
         <div className='card'>
           <div className="figma">
             <a href='https://www.figma.com/file/nhqOdl6niPhF3xO7UJzCkL/Strength---Workout-log?node-id=295%3A240' target="blank">
-              <img src={FigmaLogo} className="round-corners-black" alt=''/>
+              <img src={FigmaLogo} className="round-corners-black" alt='' />
             </a>
           </div>
           <div className='head'>
-            <img src={StrengthLogo} className="round-corners-black" alt=''/>
+            <img src={StrengthLogo} className="round-corners-black" alt='' />
           </div>
 
           <h2>Strength</h2>
@@ -59,7 +61,7 @@ const Portfolio = () => (
       <Fade bottom delay={50}>
         <div className='card'>
           <div className='head'>
-            <img src={CrownLogo} alt=''/>
+            <img src={CrownLogo} alt='' />
           </div>
 
           <h2>Crown Clothing</h2>
@@ -81,7 +83,7 @@ const Portfolio = () => (
       <Fade bottom delay={100}>
         <div className='card'>
           <div className='head'>
-            <img src={MsgMeLogo} alt=''/>
+            <img src={MsgMeLogo} alt='' />
           </div>
 
           <h2>MsgMe</h2>
@@ -103,7 +105,7 @@ const Portfolio = () => (
       <Fade bottom delay={150}>
         <div className='card'>
           <div className='head'>
-            <img src={DmLogo} className="round-corners-black" alt=''/>
+            <img src={DmLogo} className="round-corners-black" alt='' />
           </div>
 
           <h2>#Deathmatch</h2>
@@ -125,7 +127,7 @@ const Portfolio = () => (
       <Fade bottom delay={200}>
         <div className='card'>
           <div className='head'>
-            <img src={DeathlonLogo} className="round-corners-black" alt=''/>
+            <img src={DeathlonLogo} className="round-corners-black" alt='' />
           </div>
 
           <h2>Deathlon</h2>

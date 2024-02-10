@@ -10,7 +10,9 @@ import { Fade, Flip } from 'react-reveal';
 
 const Contact = () => (
   <div id="contact">
-    <h2>Contact</h2>
+    <Fade bottom delay={200}>
+      <h2>Contact</h2>
+    </Fade>
 
     <div id="top">
       <Fade top delay={500}>

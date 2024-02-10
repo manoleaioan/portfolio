@@ -10,7 +10,9 @@ import Fade from 'react-reveal/Fade';
 
 const Skills = () => (
   <div id="skills">
-    <h2>Skills</h2>
+    <Fade bottom>
+      <h2>Skills</h2>
+    </Fade>
     <div id="cards">
       <Fade bottom>
         <div className='card'>
