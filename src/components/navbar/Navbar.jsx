@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-scroll';
 
 import './navbar.scss';
-import Logo from '../../assets/logo2.svg'
-
+import Logo from '../../assets/logo2.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => {
-  const [scrolled, setScrolled] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState();
+  const [theme, setTheme] = React.useState('light');
   const [menuOpen, setOpen] = React.useState(false);
 
   const handleCheckBox = (e) => {
@@ -16,20 +18,20 @@ const Navbar = (props) => {
   const handleScroll = () => {
     const offset = window.scrollY;
 
-    const lastLi = document.querySelector('.navigation ul li:last-child a:last-child');
+    const lastLi = document.querySelector('.navigation ul li:nth-last-child(2) a:last-child');
+
     if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
-      lastLi.classList.add('navbar__activeLink');
+      lastLi?.classList.add('navbar__activeLink');
     } else {
-      lastLi.classList.remove('navbar__activeLink');
+      lastLi?.classList.remove('navbar__activeLink');
     }
 
-    const activeLink = document.getElementsByClassName('navbar__activeLink')[document.getElementsByClassName('navbar__activeLink').length - 1];
+    const activeLink = document.getElementsByClassName('navbar__activeLink')[document.getElementsByClassName('navbar__activeLink').length -1];
 
     const target = document.querySelector('#activeLinkIndicator');
     const activeLinkRect = activeLink?.getBoundingClientRect();
 
     target.style.left = `${activeLinkRect?.left - document.querySelector('.navigation ul')?.getBoundingClientRect()?.x}px`;
-
 
     if (offset > 70) {
       setScrolled(true);
@@ -41,6 +43,8 @@ const Navbar = (props) => {
   }
 
   useEffect(() => {
+    setTheme(localStorage.getItem('theme'));
+    document.querySelector("body").setAttribute('data-theme', localStorage.getItem('theme'));
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleScroll)
     setTimeout(() => {
@@ -50,13 +54,22 @@ const Navbar = (props) => {
 
   let headerClasses = ['navbar', scrolled && 'navbar__scrolled'].join(" ");
 
+  const toggleDarkMode = () => {
+    setTheme(prevTheme => {
+      const newTheme = prevTheme === "dark" ? "light" : "dark";
+      document.querySelector("body").setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      return newTheme;
+    });
+  }
+
   return (
     <>
       <header className={headerClasses}>
         <div id="wrap">
 
           <div id="logo">
-            <Link to="hero" smooth={true} duration={750} offset={-55}><img src={Logo} alt='logo'/></Link>
+            <Link to="hero" smooth={true} duration={750} offset={-55}><img src={Logo} alt='logo' /></Link>
           </div>
 
           <div className="navbar__menuToggle">
@@ -103,9 +116,23 @@ const Navbar = (props) => {
                 </Link>
                 <Link activeClass="navbar__activeLink" to="contact" spy={true} offset={-400}></Link>
               </li>
+              <li>
+                <label className='dark_mode_label' for='darkmode-toggle' id='themeBtn'>
+                  <input
+                    className='dark_mode_input'
+                    type='checkbox'
+                    id='darkmode-toggle'
+                    onChange={toggleDarkMode}
+                  />
+                  {
+                    theme === 'dark' ?
+                      <FontAwesomeIcon icon={faMoon} /> :
+                      <FontAwesomeIcon icon={faSun} />
+                  }
+                </label>
+              </li>
             </ul>
           </nav>
-
         </div>
       </header>
 

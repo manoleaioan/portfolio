@@ -23,7 +23,7 @@ import RecoLetter from '../../assets/Reccommendation_Letter_-_Yionutz.pdf';
 
 const Portfolio = () => (
   <div id="portfolio">
-    <Fade bottom>
+    <Fade bottom delay={100}>
       <h2>Portfolio</h2>
     </Fade>
     <div id="cards">

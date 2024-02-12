@@ -73,7 +73,7 @@
     h1 {
       font-weight: 600;
       font-size: 41px;
-      color: #474747;
+      color: var(--heading-color);
       margin-top: 17px;
     }
 
@@ -94,7 +94,7 @@
       border: 1px solid #fdb719;
       box-sizing: border-box;
       border-radius: 16px 0px 16px 16px;
-      background-color: #fff;
+      background-color: transparent;
       margin-top: 30px;
       outline: none;
       transition: 0.5s;

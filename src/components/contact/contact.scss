@@ -16,7 +16,7 @@
   #aw {
     width: 284px;
     height: 71px;
-    background: linear-gradient(0deg, #ffffff, #ffffff);
+    background: transparent;
     border: 1px solid #fdb719;
     box-sizing: border-box;
     border-radius: 36px 36px 36px 0;
@@ -33,8 +33,9 @@
     list-style: none;
 
     li {
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
+      background: var(--card-background);
+      border: 1px solid;
+      border-color: var(--card-border-color);
       border-radius: 7px;
       width: 320px;
       height: 90px;

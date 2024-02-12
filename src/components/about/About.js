@@ -5,7 +5,7 @@ import Slide from 'react-reveal/Slide';
 
 const About = () => (
   <div id="about">
-    <Slide bottom>
+    <Slide bottom delay={100}>
       <h2>About</h2>
       <p><span></span> Hello, I’m a specialist eager to connect! Coding is one of my therapeutic activity and I write code mainly for web applications.</p>
       <p><span></span>I have experience in Full Stack Web Development and a serious passion in creating Restful Web Services and dynamic web pages.</p>

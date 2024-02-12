@@ -1,3 +1,29 @@
+:root{
+  --color:#000;
+  --body-background:#fff;
+  --heading-color:#474747;
+  --card-background:#fff;
+  --card-box-shadow: 0px 6px 15px 8px rgba(0, 0, 0, 0.04);
+  --card-header-box-shadow: 0px 8px 15px 0px #d0d0d057;
+  --card-btn-box-shadow: 0px 2px 4px rgb(162 162 162 / 35%);
+  --card-color:#000;
+  --card-border-color:#e5e5e5;
+  --logo-filter:invert(0%);
+}
+
+[data-theme="dark"]{
+  --color:#bfbfbf;
+  --body-background:#121212;
+  --heading-color:#ffffffba;
+  --card-background: transparent;
+  --card-box-shadow:0px 6px 15px 8px rgb(0 0 0 / 31%);
+  --card-header-box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 58%);
+  --card-btn-box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+  --card-color:#bfbfbf;
+  --card-border-color:#3c3c3c;
+  --logo-filter:invert(100%);
+}
+
 *{
   margin:0;
   padding: 0;
@@ -9,6 +35,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body-background);
+  color: var(--color);
 }
 
 code {
