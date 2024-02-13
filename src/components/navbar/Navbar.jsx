@@ -55,10 +55,23 @@ const Navbar = (props) => {
   let headerClasses = ['navbar', scrolled && 'navbar__scrolled'].join(" ");
 
   const toggleDarkMode = () => {
+    
+    var navbar = document.querySelector('.navbar');
+    var body = document.body;
+    navbar.style.transition = 'background-color 0.5s ease';
+    body.style.transition = 'background-color 0.5s ease';
+
     setTheme(prevTheme => {
       const newTheme = prevTheme === "dark" ? "light" : "dark";
       document.querySelector("body").setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+
+
+      setTimeout(() => {
+        navbar.style.transition = 'none';
+        body.style.transition = 'none';
+      }, 1000);
+
       return newTheme;
     });
   }

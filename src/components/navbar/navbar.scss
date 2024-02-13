@@ -24,7 +24,6 @@
   left: 0;
   z-index: 99;
   padding: 0 5% 0 5%;
-  transition: 0.3s;
 
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 0;
@@ -88,7 +87,6 @@
         &~span {
           opacity: 1;
           transform: rotate(-45deg) translate(0px, -1px);
-          background: #232323;
 
           &:nth-last-child(2) {
             opacity: 0;
@@ -147,8 +145,8 @@
       opacity: 0.8;
       width: 100%;
       cursor: pointer;
-      -webkit-filter:(--logo-filter);
-          filter: invert(100%);
+      -webkit-filter:var(--logo-filter);
+          filter:var(--logo-filter);
     }
   }
 
@@ -168,7 +166,6 @@
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     transform-origin: top;
     transform: scaleY(0);
-
     -moz-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
