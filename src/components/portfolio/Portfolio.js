@@ -50,8 +50,8 @@ const Portfolio = () => (
           </ul>
 
           <div className="btns">
-            <a href="https://strength-workout.herokuapp.com/" target="blank"><button><FontAwesomeIcon icon={faGlobe} />See Live</button></a>
-            <a href="https://github.com/manoleaioan/strength" target="blank"><button className="git"><FontAwesomeIcon icon={faGithub} />Git Repo</button></a>
+            <a href="https://strength.up.railway.app/" target="blank"><button><FontAwesomeIcon icon={faGlobe} />See Live</button></a>
+            <a href="https://github.com/manoleaioan/strength" target="blank"><button disabled className="git"><FontAwesomeIcon icon={faGithub} />Git Repo</button></a>
           </div>
 
         </div>

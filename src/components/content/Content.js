@@ -13,7 +13,7 @@ const Content = () => {
 		const fetchData = async () => {
 			try {
 				await fetch('https://chatapp-mysql.herokuapp.com/');
-				await fetch('https://strength-workout.herokuapp.com/');
+				await fetch('https://strength.up.railway.app/');
 			} catch (error) {
 				console.error('Error fetching data:', error);
 				// Handle the error, e.g., display an error message to the user

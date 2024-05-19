@@ -55,7 +55,6 @@ const Navbar = (props) => {
   let headerClasses = ['navbar', scrolled && 'navbar__scrolled'].join(" ");
 
   const toggleDarkMode = () => {
-    
     var navbar = document.querySelector('.navbar');
     var body = document.body;
     navbar.style.transition = 'background-color 0.5s ease';
