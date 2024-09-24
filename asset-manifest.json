@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c96a777e.css",
-    "main.js": "/portfolio/static/js/main.20aea7aa.js",
+    "main.css": "/portfolio/static/css/main.da4d2b4c.css",
+    "main.js": "/portfolio/static/js/main.f04c2de7.js",
     "static/media/pwmanager.ico": "/portfolio/static/media/pwmanager.48322b649d4fd1915ba2.ico",
     "static/media/dm.png": "/portfolio/static/media/dm.ae1d03c5a07c3ab97c49.png",
     "static/media/Reccommendation_Letter_-_Yionutz.pdf": "/portfolio/static/media/Reccommendation_Letter_-_Yionutz.1815428fb6df599f75f5.pdf",
-    "static/media/profilePic.png": "/portfolio/static/media/profilePic.28a3b034ccde32851419.png",
+    "static/media/profilePic.png": "/portfolio/static/media/profilePic.c8c4d2bdba2e7231e3b8.png",
     "static/media/msgme.png": "/portfolio/static/media/msgme.76c3e675cdc25c87d8f0.png",
     "static/media/deathlon.jpg": "/portfolio/static/media/deathlon.7064b11bdae9d74c0f2e.jpg",
     "static/media/strengthLogo.svg": "/portfolio/static/media/strengthLogo.980c99f4bfa79b83e768db93e220c25f.svg",
@@ -14,12 +14,12 @@
     "static/media/crown.svg": "/portfolio/static/media/crown.3a4e2b15908e7a4c25343677d232b7e6.svg",
     "static/media/figma.svg": "/portfolio/static/media/figma.0f4098dccb2a84e24331b00bc6a8dcf8.svg",
     "index.html": "/portfolio/index.html",
-    "static/media/PolyRectangle.svg": "/portfolio/static/media/PolyRectangle.a95ca7c4c11750922faac87044c690a8.svg",
-    "main.c96a777e.css.map": "/portfolio/static/css/main.c96a777e.css.map",
-    "main.20aea7aa.js.map": "/portfolio/static/js/main.20aea7aa.js.map"
+    "static/media/PolyRectangle.svg": "/portfolio/static/media/PolyRectangle.2bbd097324af5bd60c4d864556f74ee0.svg",
+    "main.da4d2b4c.css.map": "/portfolio/static/css/main.da4d2b4c.css.map",
+    "main.f04c2de7.js.map": "/portfolio/static/js/main.f04c2de7.js.map"
   },
   "entrypoints": [
-    "static/css/main.c96a777e.css",
-    "static/js/main.20aea7aa.js"
+    "static/css/main.da4d2b4c.css",
+    "static/js/main.f04c2de7.js"
   ]
 }
