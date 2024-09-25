@@ -110,6 +110,7 @@
     ul {
       display: flex;
       flex-direction: row;
+      width: 100%;
 
       li {
         width: 235px;
@@ -120,7 +121,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-
+        
         a {
           display: unset;
         }
@@ -131,6 +132,12 @@
         
         &:last-of-type {
           margin-right: 0;
+        }
+
+        &.single-item{
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
         }
       }
     }

@@ -26,11 +26,11 @@ const Navbar = (props) => {
       lastLi?.classList.remove('navbar__activeLink');
     }
 
-    const activeLink = document.getElementsByClassName('navbar__activeLink')[document.getElementsByClassName('navbar__activeLink').length -1];
+    const activeLink = document.getElementsByClassName('navbar__activeLink');
+    const activeLinkCount = activeLink.length;
 
     const target = document.querySelector('#activeLinkIndicator');
-    const activeLinkRect = activeLink?.getBoundingClientRect();
-
+    const activeLinkRect = activeLink[activeLinkCount-1]?.getBoundingClientRect();
     target.style.left = `${activeLinkRect?.left - document.querySelector('.navigation ul')?.getBoundingClientRect()?.x}px`;
 
     if (offset > 70) {
@@ -97,7 +97,7 @@ const Navbar = (props) => {
                 <Link to="hero" smooth={true} duration={750} offset={-55}>
                   Home
                 </Link>
-                <Link activeClass="navbar__activeLink" to="hero" spy={true} offset={-400}></Link>
+                <Link className="navbar-link" activeClass="navbar__activeLink" to="hero" spy={true} offset={-400}></Link>
                 <span id="activeLinkIndicator"></span>
               </li>
 
@@ -105,31 +105,31 @@ const Navbar = (props) => {
                 <Link to="about" smooth={true} duration={750} offset={-55}>
                   ABOUT ME
                 </Link>
-                <Link activeClass="navbar__activeLink" to="about" spy={true} offset={-400}></Link>
+                <Link className="navbar-link" activeClass="navbar__activeLink" to="about" spy={true} offset={-400}></Link>
               </li>
 
               <li>
                 <Link to="skills" smooth={true} duration={750} offset={-55}>
                   SKILLS
                 </Link>
-                <Link activeClass="navbar__activeLink" to="skills" spy={true} offset={-400}></Link>
+                <Link className="navbar-link" activeClass="navbar__activeLink" to="skills" spy={true} offset={-400}></Link>
               </li>
 
               <li>
                 <Link to="portfolio" smooth={true} duration={750} offset={-55}>
                   PORTFOLIO
                 </Link>
-                <Link activeClass="navbar__activeLink" to="portfolio" spy={true} offset={-400}></Link>
+                <Link className="navbar-link" activeClass="navbar__activeLink" to="portfolio" spy={true} offset={-400}></Link>
               </li>
 
               <li>
                 <Link to="contact" smooth={true} duration={750} offset={-55}>
                   CONTACT
                 </Link>
-                <Link activeClass="navbar__activeLink" to="contact" spy={true} offset={-400}></Link>
+                <Link className="navbar-link" activeClass="navbar__activeLink" to="contact" spy={true} offset={-400}></Link>
               </li>
               <li>
-                <label className='dark_mode_label' for='darkmode-toggle' id='themeBtn'>
+                <label className='dark_mode_label' htmlFor='darkmode-toggle' id='themeBtn'>
                   <input
                     className='dark_mode_input'
                     type='checkbox'

@@ -21,13 +21,13 @@ const Contact = () => (
         </div>
       </Fade>
       <ul>
-        <Flip left delay={200}>
+        {/* <Flip left delay={200}>
           <li>
-            <a target="_blank" href="mailto:ioanmanolea@gmail.com?subject=contact">
+            <a target="_blank" href="mailto:xxxxx@xxxx.com?subject=contact">
               <FontAwesomeIcon icon={faEnvelope} />
               <div>
                 <h2>Mail</h2>
-                <p>ioanmanolea@gmail.com</p>
+                <p>xxxxx@xxxx.com</p>
               </div>
             </a>
           </li>
@@ -35,18 +35,18 @@ const Contact = () => (
 
         <Flip bottom delay={200}>
           <li>
-            <a href='tel:+40748495960'>
+            <a href='tel:+40XXXXXXXXX'>
               <FontAwesomeIcon icon={faPhoneAlt} />
               <div>
                 <h2>Phone</h2>
-                <p>+40 748 495 960</p>
+                <p>+xx xxx xxx xxx</p>
               </div>
             </a>
           </li>
-        </Flip>
+        </Flip> */}
 
         <Flip right delay={200}>
-          <li>
+          <li className='single-item'>
             <a target="_blank" href='https://www.linkedin.com/in/manoleaioan'>
               <FontAwesomeIcon icon={faLinkedinIn} />
               <div>

@@ -27,7 +27,7 @@ const Skills = () => (
             <li><FontAwesomeIcon icon={faCheck} /><span>React & Angular</span></li>
             <li><FontAwesomeIcon icon={faCheck} /><span>VanillaJs/Ts</span></li>
             <li><FontAwesomeIcon icon={faCheck} /><span>Responsive Web Design</span> </li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Redux</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Redux/Redux-Saga</span></li>
           </ul>
         </div>
       </Fade>
@@ -61,8 +61,8 @@ const Skills = () => (
           <h2>Others</h2>
 
           <ul>
-            <li><FontAwesomeIcon icon={faCheck} /><span>GitHub/Heroku</span></li>
-            <li><FontAwesomeIcon icon={faCheck} /><span>Docker</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Git/GitHub</span></li>
+            <li><FontAwesomeIcon icon={faCheck} /><span>Docker(basic)</span></li>
             <li><FontAwesomeIcon icon={faCheck} /><span>Photoshop/Figma</span> </li>
             <li><FontAwesomeIcon icon={faCheck} /><span>Lua/C#/Python</span></li>
           </ul>

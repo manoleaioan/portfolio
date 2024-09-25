@@ -13,34 +13,7 @@
     width: 220px;
     align-self: center;
     margin-top: 77px;
-    .inner-shadow {
-      z-index: 2;
-      width: 158.07px;
-      height: 158.07px;
-      border-radius: 50%;
-
-      img {
-        width: 158.07px;
-        height: 158.07px;
-        border-radius: 50%;
-        object-fit: cover;
-        z-index: -1;
-      }
-
-      &::after {
-        display: block;
-        position: relative;
-
-        -moz-box-shadow: inset 0px -23px 6px rgba(255, 255, 255, 0.9);
-        -webkit-box-shadow: inset 0px -23px 6px rgba(255, 255, 255, 0.9);
-        box-shadow: inset 0px -23px 6px rgba(255, 255, 255, 0.9);
-        margin-top: -150px;
-        width: 158.07px;
-        height: 158.07px;
-        border-radius: 50%;
-        content: "";
-      }
-    }
+    // box-shadow: inset 0px -23px 6px rgba(255, 255, 255, 0.9);
 
     svg {
       width: 230px;
@@ -48,6 +21,11 @@
       position: absolute;
       overflow: visible;
       z-index: 1;
+
+      image{
+        width: 240px;
+        // width: 180px;
+      }
     }
   }
 
@@ -67,7 +45,6 @@
       line-height: 35px;
       background: #fdb719;
       border-radius: 16px 16px 16px 0px;
-      //padding: 5px 15px;
     }
 
     h1 {
@@ -113,8 +90,7 @@
     margin-top: 84px !important;
     padding-top: 150px;
     margin-bottom: 5px;
-    //min-height: 650px !important;
-    //height: 100vh;
+
     &__about {
       align-items: flex-start;
       height: 260px;
@@ -138,10 +114,9 @@
       svg {
         width: 270px;
         height: 270px;
-        &:first-child {
+        &:second-child {
           path {
-            stroke-width: 40px !important;
-            //stroke-opacity: 0 !important;
+            stroke-width: 20px !important;
           }
         }
       }
