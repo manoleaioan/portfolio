@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import { Fade, LightSpeed, Flip } from 'react-reveal';
 
 
-import profilePic from '../../assets/profile/profile-pic (11).png'
+import profilePic from '../../assets/profile.png'
 
 
 const Hero = () => {
