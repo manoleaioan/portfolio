@@ -6,6 +6,8 @@ import Logo from '../../assets/logo2.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
+let timeoutId;
+
 const Navbar = (props) => {
   const [scrolled, setScrolled] = React.useState();
   const [theme, setTheme] = React.useState('light');
@@ -31,7 +33,11 @@ const Navbar = (props) => {
 
     const target = document.querySelector('#activeLinkIndicator');
     const activeLinkRect = activeLink[activeLinkCount-1]?.getBoundingClientRect();
-    target.style.left = `${activeLinkRect?.left - document.querySelector('.navigation ul')?.getBoundingClientRect()?.x}px`;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      target.style.left = `${activeLinkRect?.left - document.querySelector('.navigation ul')?.getBoundingClientRect()?.x}px`;
+    }, 50);
 
     if (offset > 70) {
       setScrolled(true);
