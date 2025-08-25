@@ -112,7 +112,7 @@ const Navbar = () => {
       window.scrollTo(0, 0);
     }
 
-    // setActiveSection(path);
+    setActiveSection(path);
     navigate(path);
   }
 
