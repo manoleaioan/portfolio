@@ -109,7 +109,7 @@ export const SwipeCarousel = ({ imgs = [], projectId, ...props }) => {
             <Lightbox
                 open={open}
                 close={() => setOpen(false)}
-                slides={[...(imgs.map(i => ({ src: i })))]}
+                slides={[...(imgs.map((i) => ({ src: `${process.env.PUBLIC_URL}/${i}` })))]}
                 index={photoIndex}
                 plugins={[Zoom]}
             />

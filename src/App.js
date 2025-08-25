@@ -13,13 +13,21 @@ import ProjectDespam from './components/pages/projects/Despam/Despam.jsx';
 
 
 const App = () => {
+
+  const getBaseName = () => {
+    const pathParts = window.location.pathname.split("/");
+
+    return pathParts.length > 1 ? `/${pathParts[1]}` : "";
+  };
+
+
   return (
-    <Router>
+    <Router basename={getBaseName()}>
       <FirstLoadProvider>
         <PreviousPathProvider>
 
           <div className="App">
-            
+
             <Navbar />
 
             <LayoutGroup>
@@ -39,7 +47,7 @@ const App = () => {
 
             <Footer />
           </div>
-          
+
         </PreviousPathProvider>
       </FirstLoadProvider>
     </Router>
