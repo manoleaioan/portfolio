@@ -25,7 +25,7 @@ const Navbar = () => {
   useEffect(() => {
     scroller.scrollTo(sectionId, {
       smooth: true,
-      duration: previousPath?.includes('/project/') && location.pathname === '/projects' ? 0 : 750,
+      duration: previousPath?.startsWith('/project/') && location.pathname === '/projects' ? 0 : 750,
       offset: -55,
     });
 

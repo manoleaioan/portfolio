@@ -15,11 +15,10 @@ import ProjectDespam from './components/pages/projects/Despam/Despam.jsx';
 const App = () => {
 
   const getBaseName = () => {
-    const pathParts = window.location.pathname.split("/");
-
-    return pathParts.length > 1 ? `/${pathParts[1]}` : "";
+    const [, firstSegment] = window.location.pathname.split("/");
+    return "/portfolio"
+    return firstSegment ? `/${firstSegment}` : "";
   };
-
 
   return (
     <Router basename={getBaseName()}>
