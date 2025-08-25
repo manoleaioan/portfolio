@@ -122,7 +122,7 @@ const Navbar = () => {
     if (setActiveTimeoutId.current) clearTimeout(setActiveTimeoutId.current);
     setActiveTimeoutId.current = setTimeout(() => {
       setActiveSection(path)
-      window.history.replaceState(null, "", path === '' ? '/' : path);
+      navigate(path === '' ? '/' : path, { replace: true });
     }, 500);
   }
 
