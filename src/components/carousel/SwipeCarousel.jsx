@@ -128,7 +128,7 @@ const Images = ({ imgs, imgIndex, onClick, projectId }) => {
                     key={idx}
                     className="carousel-image"
                     style={{
-                        backgroundImage: `url(${imgSrc})`,
+                        backgroundImage: `url(${process.env.PUBLIC_URL}/${imgSrc})`,
                         position: 'absolute',
                         left: 0,
                         bottom: 0

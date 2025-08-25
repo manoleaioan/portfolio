@@ -6,9 +6,9 @@
         "logo": "despamLogo.png",
         "bg": "despambg2.png",
         "slideImages": [
-            "/assets/despambg2.png",
-            "/assets/despambg3.png",
-            "/assets/despambg4.png"
+            "assets/despambg2.png",
+            "assets/despambg3.png",
+            "assets/despambg4.png"
         ],
         "bgtransform": "rotate3d(1, 1, 1, 10deg) scale(1.2)",
         "github": "https://github.com/manoleaioan/despam",
@@ -25,8 +25,8 @@
         "logo": "strengthLogo.svg",
         "bg": "strengthbg.png",
         "slideImages": [
-            "/assets/strengthbg.png",
-            "/assets/strengthbg2.png"
+            "assets/strengthbg.png",
+            "assets/strengthbg2.png"
         ],
         "live-off": "https://strength.up.railway.app/",
         "github": "https://github.com/manoleaioan/strength",

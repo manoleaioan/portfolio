@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link, scroller } from 'react-scroll';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +9,6 @@ import './Navbar.scss';
 import { usePreviousPath } from '../../context/PreviousPathContext';
 
 
-let timeoutId;
 
 const Navbar = () => {
   const [scrolled, setScrolled] = React.useState();
@@ -19,20 +18,21 @@ const Navbar = () => {
   const location = useLocation();
   const sectionId = location.pathname.split("/")[1];
   const previousPath = usePreviousPath();
-  const [activeSection, setActiveSection] = useState(sectionId.startsWith('project') ? 'portfolio' : sectionId);
+  const [activeSection, setActiveSection] = useState(sectionId.startsWith('project') ? 'projects' : sectionId);
+  const handleScrollTimeoutId = useRef(null);
+  const setActiveTimeoutId = useRef(null);
 
   useEffect(() => {
     scroller.scrollTo(sectionId, {
       smooth: true,
-      duration: previousPath?.startsWith('/project/') && location.pathname === '/portfolio' ? 0 : 750,
+      duration: previousPath?.startsWith('/project/') && location.pathname === '/projects' ? 0 : 750,
       offset: -55,
     });
 
-    if(sectionId.startsWith('project')){
-      setActiveSection('portfolio');
+    if (sectionId.startsWith('project')) {
+      setActiveSection('projects');
     }
-    
-    console.log('changed to ', sectionId)
+
   }, [sectionId])
 
   const handleCheckBox = (e) => {
@@ -56,10 +56,8 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
 
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => handleScroll(), 100);
-
-    // console.log(location.pathname, sectionId)
+    if (handleScrollTimeoutId.current) clearTimeout(handleScrollTimeoutId.current);
+    handleScrollTimeoutId.current = setTimeout(() => handleScroll(), 100);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -110,19 +108,19 @@ const Navbar = () => {
   };
 
   const onNavClick = (path) => {
-    if (previousPath?.startsWith('/project/') && (path == -1 || path === 'portfolio')) {
+    if (previousPath?.startsWith('/project/') && (path == -1 || path === 'projects')) {
       window.scrollTo(0, 0);
     }
 
-    setActiveSection(path);
+    // setActiveSection(path);
     navigate(path);
   }
 
   const handleOnSetActive = (path) => {
     path = path === "hero" ? "" : path;
 
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
+    if (setActiveTimeoutId.current) clearTimeout(setActiveTimeoutId.current);
+    setActiveTimeoutId.current = setTimeout(() => {
       setActiveSection(path)
       window.history.replaceState(null, "", path === '' ? '/' : path);
     }, 500);
@@ -133,7 +131,7 @@ const Navbar = () => {
       <header className={headerClasses}>
         <div id="wrap">
           <div id="logo">
-            <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick(sectionId.startsWith('project') ? 'portfolio' : '')}><Logo /></Link>
+            <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick(sectionId.startsWith('project') ? 'projects' : '')}><Logo /></Link>
           </div>
 
           <div className='side-wrap'>
@@ -179,11 +177,11 @@ const Navbar = () => {
                 </li>
 
                 <li>
-                  <Link to="portfolio" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('portfolio')}>
-                    PORTFOLIO
+                  <Link to="projects" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('projects')}>
+                    PROJECTS
                   </Link>
-                  <Link className="navbar-link" to="portfolio" spy={true} offset={-55} onSetActive={handleOnSetActive} key={sectionId}></Link>
-                  {activeSection === 'portfolio' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
+                  <Link className="navbar-link" to="projects" spy={true} offset={-400} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  {activeSection === 'projects' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
                 </li>
 
                 <li>

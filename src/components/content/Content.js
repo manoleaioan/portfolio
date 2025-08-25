@@ -1,7 +1,7 @@
 import './content.scss';
 
 import Hero from "../pages/hero/Hero";
-import Portfolio from '../pages/portfolio/Portfolio';
+import Projects from '../pages/portfolio/Projects';
 import Contact from '../pages/contact/Contact';
 import Skills from '../pages/skills/Skills';
 import { AnimatePresence, motion } from "framer-motion";
@@ -22,7 +22,7 @@ const Content = () => {
 				</section>
 
 				<section>
-					<Portfolio />
+					<Projects />
 				</section>
 
 				<section>

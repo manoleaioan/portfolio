@@ -37,12 +37,12 @@ const StartWorkoutImages = () => {
   return (
     <AnimatedDiv delay={0} style={{ position: "relative", maxWidth: 450, margin: "10px auto 0", minHeight: 280 }}>
       <motion.img
-        src="/assets/wk_1.png"
+        src={`${process.env.PUBLIC_URL}/assets/wk_1.png`}
         animate={{ ...baseStyle, ...positions[showFirst ? 0 : 1], zIndex: zOnTop ? 2 : 1, opacity: showFirst ? 1 : 0.9 }}
         transition={{ duration: 1, ease: "easeInOut" }}
       />
       <motion.img
-        src="/assets/wk_2.png"
+         src={`${process.env.PUBLIC_URL}/assets/wk_2.png`}
         animate={{ ...baseStyle, ...positions[showFirst ? 1 : 0], zIndex: zOnTop ? 1 : 2, opacity: !showFirst ? 1 : 0.9 }}
         transition={{ duration: 1, ease: "easeInOut" }}
       />
@@ -160,7 +160,7 @@ const ProjectStrength = () => {
                 <p class="subheading">Metrics System</p>
 
                 <ul>
-                  <LightboxImage src={`/assets/metrics.jpg`} />
+                  <LightboxImage src={`${process.env.PUBLIC_URL}/assets/metrics.jpg`} />
                   {/* <li style={{ listStyle: 'none', border: 'none', paddingBottom: 0 }}>
                   </li> */}
                   <li style={{ listStyle: 'none', border: 'none', }}>A dedicated metrics screen lets users see:</li>

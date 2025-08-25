@@ -31,7 +31,7 @@ const ProjectDespam = () => {
               <div className="col">
 
                 <ul style={{ columnCount: 2 }}>
-                  <LightboxImage src={'/assets/loginGoogle.png'} style={{
+                  <LightboxImage src={`${process.env.PUBLIC_URL}/assets/loginGoogle.png`} style={{
                     maxWidth: "460px",
                     // marginBottom: "20px",
                     //  borderRadius: 0,
@@ -94,7 +94,7 @@ const ProjectDespam = () => {
                   <li>Concurrently – runs the React development server and Electron app simultaneously during development.</li>
                   <li>Express – acts as a lightweight backend within Electron, used to detect and handle successful Google OAuth logins.</li>
                   <li>JSON5 – supports flexible and human-friendly configuration file parsing for keywords.</li>
-                  <LightboxImage src={'/assets/editor.jpg'} style={{
+                  <LightboxImage src={`${process.env.PUBLIC_URL}/assets/editor.jpg`} style={{
                     maxWidth: "460px",
                     marginBottom: "20px",
                     width: "90%",

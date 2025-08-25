@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import './portfolio.scss';
+import './projects.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -19,7 +19,7 @@ import projects from '../../data/projects.json';
 import categories from '../../data/categories.json';
 import { scroller } from 'react-scroll';
 
-const Portfolio = () => {
+const Projects = () => {
   const navigate = useNavigate();
   const [selectedProjectId, setSelectedProjectId] = useState(null);
   const location = useLocation();
@@ -31,7 +31,7 @@ const Portfolio = () => {
   };
 
   useEffect(() => {
-    if (location.pathname === '/portfolio' && previousPath?.startsWith('/project/')) {
+    if (location.pathname === '/projects' && previousPath?.startsWith('/project/')) {
         scroller.scrollTo(`${previousProjectId}holder`, {
           smooth: true,
           duration: 0,
@@ -63,7 +63,7 @@ const Portfolio = () => {
   const [animate, setAnimate] = useState(true);
 
   return (
-    <motion.div id="portfolio">
+    <motion.div id="projects">
 
       <SectionTitle title={'Projects'} subtitle={'MY Work'} />
       
@@ -169,4 +169,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio;
+export default Projects;
