@@ -16,7 +16,6 @@ const App = () => {
 
   const getBaseName = () => {
     const [, firstSegment] = window.location.pathname.split("/");
-    return "/portfolio"
     return firstSegment ? `/${firstSegment}` : "";
   };
 
