@@ -1,62 +1,72 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
-
-import './navbar.scss';
-import Logo from '../../assets/logo2.svg';
+import React, { useEffect, useState } from 'react';
+import { Link, scroller } from 'react-scroll';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../logo/Logo';
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import './Navbar.scss';
+import { usePreviousPath } from '../../context/PreviousPathContext';
+
 
 let timeoutId;
 
-const Navbar = (props) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = React.useState();
   const [theme, setTheme] = React.useState('light');
   const [menuOpen, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const sectionId = location.pathname.split("/")[1];
+  const previousPath = usePreviousPath();
+  const [activeSection, setActiveSection] = useState(sectionId.startsWith('project') ? 'portfolio' : sectionId);
+
+  useEffect(() => {
+    scroller.scrollTo(sectionId, {
+      smooth: true,
+      duration: previousPath?.startsWith('/project/') && location.pathname === '/portfolio' ? 0 : 750,
+      offset: -55,
+    });
+
+    if(sectionId.startsWith('project')){
+      setActiveSection('portfolio');
+    }
+    
+    console.log('changed to ', sectionId)
+  }, [sectionId])
 
   const handleCheckBox = (e) => {
     setOpen(e.target.checked)
   }
 
   const handleScroll = () => {
-    const offset = window.scrollY;
+    setScrolled(window.scrollY > 70);
 
-    const lastLi = document.querySelector('.navigation ul li:nth-last-child(2) a:last-child');
-
-    if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
-      lastLi?.classList.add('navbar__activeLink');
-    } else {
-      lastLi?.classList.remove('navbar__activeLink');
-    }
-
-    const activeLink = document.getElementsByClassName('navbar__activeLink');
-    const activeLinkCount = activeLink.length;
-
-    const target = document.querySelector('#activeLinkIndicator');
-    const activeLinkRect = activeLink[activeLinkCount-1]?.getBoundingClientRect();
-
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      target.style.left = `${activeLinkRect?.left - document.querySelector('.navigation ul')?.getBoundingClientRect()?.x}px`;
-    }, 50);
-
-    if (offset > 70) {
-      setScrolled(true);
-    }
-    else {
-      setScrolled(false);
-    }
     setOpen(false);
   }
 
   useEffect(() => {
     setTheme(localStorage.getItem('theme'));
     document.querySelector("body").setAttribute('data-theme', localStorage.getItem('theme'));
-    window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleScroll)
-    setTimeout(() => {
-      handleScroll();
-    });
+    updateMetaThemeColor(theme);
+    setTimeout(() => handleScroll(), 100)
   }, [])
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => handleScroll(), 100);
+
+    // console.log(location.pathname, sectionId)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [location.pathname])
+
 
   let headerClasses = ['navbar', scrolled && 'navbar__scrolled'].join(" ");
 
@@ -71,6 +81,7 @@ const Navbar = (props) => {
       document.querySelector("body").setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
 
+      updateMetaThemeColor(newTheme);
 
       setTimeout(() => {
         navbar.style.transition = 'none';
@@ -81,82 +92,115 @@ const Navbar = (props) => {
     });
   }
 
+  const updateMetaThemeColor = () => {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+    const themeElement = document.querySelector("[data-theme]");
+
+    if (!themeElement || !metaThemeColor) {
+      console.warn("Theme element or meta tag not found.");
+      return;
+    }
+
+    const themeColor = getComputedStyle(themeElement)
+      .getPropertyValue("--bg-gradient-end")
+      .trim();
+
+    metaThemeColor.setAttribute("content", themeColor);
+  };
+
+  const onNavClick = (path) => {
+    if (previousPath?.startsWith('/project/') && (path == -1 || path === 'portfolio')) {
+      window.scrollTo(0, 0);
+    }
+
+    setActiveSection(path);
+    navigate(path);
+  }
+
+  const handleOnSetActive = (path) => {
+    path = path === "hero" ? "" : path;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      setActiveSection(path)
+      window.history.replaceState(null, "", path === '' ? '/' : path);
+    }, 500);
+  }
+
   return (
     <>
       <header className={headerClasses}>
         <div id="wrap">
-
           <div id="logo">
-            <Link to="hero" smooth={true} duration={750} offset={-55}><img src={Logo} alt='logo' /></Link>
+            <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick(sectionId.startsWith('project') ? 'portfolio' : '')}><Logo /></Link>
           </div>
 
-          <div className="navbar__menuToggle">
-            <input id="checkbox" type="checkbox" onChange={handleCheckBox} checked={menuOpen} />
-            <span></span>
-            <span></span>
-            <span></span>
+          <div className='side-wrap'>
+
+            <label className='dark_mode_label' htmlFor='darkmode-toggle' id='theme-btn'>
+              <input
+                className='dark_mode_input'
+                type='checkbox'
+                id='darkmode-toggle'
+                onChange={toggleDarkMode}
+              />
+              {
+                theme === 'dark' ?
+                  <FontAwesomeIcon icon={faMoon} /> :
+                  <FontAwesomeIcon icon={faSun} />
+              }
+            </label>
+
+            <div className="navbar__menuToggle">
+              <input id="checkbox" type="checkbox" onChange={handleCheckBox} checked={menuOpen} />
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+
+            <nav className={"navigation " + (menuOpen ? " navigation-open" : "")}>
+              <ul>
+                <li>
+                  <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('')}>
+                    Home
+                  </Link>
+                  <Link className="navbar-link" to="hero" spy={true} offset={-800} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  {activeSection === '' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
+                </li>
+
+                <li>
+                  <Link to="skills" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('skills')}>
+                    SKILLS
+                  </Link>
+                  <Link className="navbar-link" to="skills" spy={true} offset={-800} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  {activeSection === 'skills' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
+                </li>
+
+                <li>
+                  <Link to="portfolio" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('portfolio')}>
+                    PORTFOLIO
+                  </Link>
+                  <Link className="navbar-link" to="portfolio" spy={true} offset={-55} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  {activeSection === 'portfolio' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
+                </li>
+
+                <li>
+                  <Link to="contact" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('contact')}>
+                    CONTACT
+                  </Link>
+                  <Link className="navbar-link" to="contact" spy={true} offset={-400} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  {activeSection === 'contact' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
+                </li>
+              </ul>
+            </nav>
+
           </div>
 
-          <nav className={"navigation " + (menuOpen ? " navigation-open" : "")}>
-            <ul>
-              <li>
-                <Link to="hero" smooth={true} duration={750} offset={-55}>
-                  Home
-                </Link>
-                <Link className="navbar-link" activeClass="navbar__activeLink" to="hero" spy={true} offset={-400}></Link>
-                <span id="activeLinkIndicator"></span>
-              </li>
-
-              <li>
-                <Link to="about" smooth={true} duration={750} offset={-55}>
-                  ABOUT ME
-                </Link>
-                <Link className="navbar-link" activeClass="navbar__activeLink" to="about" spy={true} offset={-400}></Link>
-              </li>
-
-              <li>
-                <Link to="skills" smooth={true} duration={750} offset={-55}>
-                  SKILLS
-                </Link>
-                <Link className="navbar-link" activeClass="navbar__activeLink" to="skills" spy={true} offset={-400}></Link>
-              </li>
-
-              <li>
-                <Link to="portfolio" smooth={true} duration={750} offset={-55}>
-                  PORTFOLIO
-                </Link>
-                <Link className="navbar-link" activeClass="navbar__activeLink" to="portfolio" spy={true} offset={-400}></Link>
-              </li>
-
-              <li>
-                <Link to="contact" smooth={true} duration={750} offset={-55}>
-                  CONTACT
-                </Link>
-                <Link className="navbar-link" activeClass="navbar__activeLink" to="contact" spy={true} offset={-400}></Link>
-              </li>
-              <li>
-                <label className='dark_mode_label' htmlFor='darkmode-toggle' id='themeBtn'>
-                  <input
-                    className='dark_mode_input'
-                    type='checkbox'
-                    id='darkmode-toggle'
-                    onChange={toggleDarkMode}
-                  />
-                  {
-                    theme === 'dark' ?
-                      <FontAwesomeIcon icon={faMoon} /> :
-                      <FontAwesomeIcon icon={faSun} />
-                  }
-                </label>
-              </li>
-            </ul>
-          </nav>
         </div>
-      </header>
 
-      {
-        props.children
-      }
+      </header>
     </>
   )
 };

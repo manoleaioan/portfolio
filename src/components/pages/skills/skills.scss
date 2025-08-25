@@ -1,0 +1,115 @@
+#skills {
+  flex-direction: column;
+
+  .card-container {
+    .card {
+      padding-top: 80px;
+      margin-top: 80px;
+      // max-width: 380px;
+      position: relative;
+      
+      h2 {
+        color: var(--primmary);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        letter-spacing: 0.05em;
+        // text-transform: uppercase;
+      }
+
+      .head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -84px;
+        left: 0;
+        right: 0;
+
+        svg {
+          fill: var(--card-background);
+          stroke: var(--accent);
+          width: 120px;
+          stroke-width: 9px;
+        }
+      }
+
+      .ico {
+        color: var(--accent);
+        top: unset;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: 50px;
+
+        svg {
+          position: relative;
+        }
+      }
+
+      ul {
+        font-style: normal;
+        font-size: 18px;
+        white-space: normal;
+        text-align: left;
+        list-style-type: none;
+        width: 82%;
+        margin: 0 auto;
+        color: var(--secondary);
+        letter-spacing: 0.05em;
+
+        li {
+
+          display: flex;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          white-space: normal !important;
+          align-items: baseline;
+          margin: 0 auto;
+          margin-bottom: 10px;
+
+          width: 80%;
+          min-width: 260px;
+
+          span {
+            padding-left: 15px;
+          }
+
+          svg {
+            color: #ffffff;
+            background: var(--accent);
+            border-radius: 50%;
+            padding: 3px;
+            bottom: 12;
+            font-size: 15px;
+            position: relative;
+            top: 6px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+
+
+  @media (min-width: 787px) {
+    .card-container {
+      .card {
+        .ico {
+          left: unset;
+          right: unset;
+        }
+
+
+        ul {
+          li {
+            margin-bottom: 14px;
+          }
+        }
+      }
+    }
+  }
+}

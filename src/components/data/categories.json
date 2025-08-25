@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "web dev"
+    },
+    {
+        "id": 2,
+        "name": "desktop"
+    },
+    {
+        "id": 3,
+        "name": "game dev"
+    },
+    {
+        "id": 4,
+        "name": "ui/ux"
+    },
+    {
+        "id": 5,
+        "name": "scripting"
+    },
+    {
+        "id": 6,
+        "name": "c#"
+    },
+    {
+        "id": 7,
+        "name": "js"
+    },
+    {
+        "id": 8,
+        "name": "electron"
+    }
+]

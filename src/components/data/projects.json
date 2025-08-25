@@ -1,0 +1,133 @@
+[
+    {
+        "projectId": "Despam",
+        "name": "Despam",
+        "shortDescription": "Clean your spam. Keep it Zen",
+        "logo": "despamLogo.png",
+        "bg": "despambg2.png",
+        "slideImages": [
+            "/assets/despambg2.png",
+            "/assets/despambg3.png",
+            "/assets/despambg4.png"
+        ],
+        "bgtransform": "rotate3d(1, 1, 1, 10deg) scale(1.2)",
+        "github": "https://github.com/manoleaioan/despam",
+        "figma": "https://www.figma.com/proto/sshBYPwqGpWRL30xEFLcN7/Deathlon",
+        "categories": [
+            2,
+            8
+        ]
+    },
+    {
+        "projectId": "Strength",
+        "name": "Strength",
+        "shortDescription": "Fitness Workout logger",
+        "logo": "strengthLogo.svg",
+        "bg": "strengthbg.png",
+        "slideImages": [
+            "/assets/strengthbg.png",
+            "/assets/strengthbg2.png"
+        ],
+        "live-off": "https://strength.up.railway.app/",
+        "github": "https://github.com/manoleaioan/strength",
+        "figma": "https://www.figma.com/file/nhqOdl6niPhF3xO7UJzCkL/Strength",
+        "youtubeDemo": "https://www.youtube-nocookie.com/embed/Nx3enQWf6c0?si=mPCJMxR3fQe6vBg3",
+        "categories": [
+            1,
+            4
+        ],
+        "color": "white"
+    },
+    {
+        "projectId": "crownclothing",
+        "name": "Crown Clothing",
+        "shortDescription": "E-Commerce Website with stripe API",
+        "logo": "crown.svg",
+        "bg": "appbg.jpg",
+        "github": "https://github.com/manoleaioan/ecommerce",
+        "categories": [
+            1
+        ],
+        "show": false
+    },
+    {
+        "projectId": "msgme",
+        "name": "MsgMe",
+        "shortDescription": "A simple chat App using GraphQL Subscriptions",
+        "logo": "msgme.png",
+        "bg": "",
+        "github": "https://github.com/manoleaioan/chatApp-Apollo",
+        "categories": [
+            1
+        ],
+        "show": false
+    },
+    {
+        "projectId": "#Deathmatch",
+        "name": "#Deathmatch",
+        "shortDescription": "Developing and maintaining  a <br />  free mini-game of <a href='https://www.transformice.com/'>Transformice</a>",
+        "logo": "dm.png",
+        "bg": "",
+        "web": "https://transformice.fandom.com/wiki/Deathmatch",
+        "recLetter": "Reccommendation_Letter_-_Yionutz.pdf",
+        "categories": [
+            3,
+            5
+        ],
+        "show": false
+    },
+    {
+        "projectId": "Deathlon",
+        "name": "Deathlon",
+        "shortDescription": "Transformice Standalone with <br /> One Click Login Tool<",
+        "logo": "deathlon.jpg",
+        "bg": "",
+        "video": "https://youtu.be/Sv6dDgflNW0",
+        "github": "https://github.com/manoleaioan/Deathlon",
+        "categories": [
+            2,
+            6
+        ],
+        "show": false
+    },
+    {
+        "projectId": "BinanceTradingBot",
+        "name": "Binance Trading Bot",
+        "shortDescription": "Binance Trading bot made with NodeJs",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/5/57/Binance_Logo.png",
+        "bg": "",
+        "github": "https://github.com/manoleaioan/binance-trading-bot",
+        "categories": [
+            5,
+            7
+        ],
+        "show": false
+    },
+    {
+        "projectId": "PasswordMananger",
+        "name": "Password Mananger",
+        "shortDescription": "A simple Password Manager tool<br /> for Windows Users.",
+        "logo": "pwmanager.ico",
+        "bg": "",
+        "github": "https://github.com/manoleaioan/Password-Manager",
+        "categories": [
+            2,
+            6
+        ],
+        "show": false
+    },
+    {
+        "projectId": "4TYPE",
+        "name": "4TYPE",
+        "shortDescription": ">Social-App including: real-time chat, <br />people recommendations, notifications, friend requests, etc.",
+        "logo": "4type.svg",
+        "bg": "",
+        "figma": "https://www.figma.com/file/ZkT2HMLrKTIxGORp6tFylU/4Type-Web-App",
+        "github": "https://github.com/manoleaioan/4type",
+        "categories": [
+            1,
+            4
+        ],
+        "show": false
+    }
+]

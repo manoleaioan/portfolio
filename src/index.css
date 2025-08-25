@@ -1,55 +1,74 @@
-:root{
-  --color:#000;
-  --body-background:#fff;
-  --heading-color:#474747;
-  --card-background:#fff;
-  --card-box-shadow: 0px 6px 15px 8px rgba(0, 0, 0, 0.04);
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --body-background: #fff;
+  --heading-color: #474747;
+  --card-background: #FFF;
+  --card-box-shadow: 0px 6px 15px 8px rgb(0 0 0 / 4%);
   --card-header-box-shadow: 0px 8px 15px 0px #d0d0d057;
-  --card-header-border:none;
+  --card-header-border: none;
   --card-btn-box-shadow: 0px 2px 4px rgb(162 162 162 / 35%);
-  --card-color:#000;
-  --card-border-color:#e5e5e5;
-  --logo-filter:grayscale(0%);
-  --header-border: 1px solid rgba(54, 54, 54, 0.1);
-  --header-box-shadow: rgba(0, 0, 0, 0.05);
+  --card-color: #000;
+  --card-border-color: #e5e5e5;
+  --header-border: 1px solid rgb(0 0 0 / 5%);
+  --header-box-shadow: rgb(0 0 0 / 5%);
+  --primary: #2B2B2B;
+  --secondary: #262626;
+  --accent: #FDB719;
+  --bg-gradient-start: #FFF;
+  --bg-gradient-end: #F0EBE3;
+  --btn-drop-shadow: rgb(0 0 0 / 12%);
+  --icon-drop-shadow:rgb(0 0 0 / 12%);
+  --li-border-color:#00000010;
 }
 
-[data-theme="dark"]{
-  --color:#bfbfbf;
-  --body-background:#121212;
-  --heading-color:#ffffffba;
-  --card-background: transparent;
-  --card-box-shadow:0px 6px 15px 8px rgb(0 0 0 / 31%);
+[data-theme="dark"] {
+  --body-background: #121212;
+  --heading-color: #ffffffba;
+  --card-background: #1D222A;
+
+  /* --card-box-shadow: 0px 8px 0px 0px rgba(255, 255, 255, 0.12); */
   --card-header-box-shadow: 0px 8px 15px 0px rgb(0 0 0 / 58%);
-  --card-header-border:1px solid #2f2d2d82;
+  --card-header-border: 1px transparent #2f2d2d82;
   --card-btn-box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
-  --card-color:#bfbfbf;
-  --card-border-color:#3c3c3c;
-  --logo-filter:invert(100%);
-  --header-border: 1px solid rgba(54, 54, 54, 0.2);
-  --header-box-shadow: rgba(0, 0, 0, 0.4);
+  --card-color: #bfbfbf;
+  --card-border-color: #3c3c3c;
+  --header-border: 1px solid rgb(255 255 255 / 8%);
+  --header-box-shadow: rgb(0 0 0 / 40%);
+  --primary: #fff;
+  --secondary: #cfcfcf;
+  --accent: #BC85FB;
+  --bg-gradient-end: #222831;
+  --bg-gradient-start: #31363C;
+  --btn-drop-shadow: rgb(255 255 255 / 12%);
+  --icon-drop-shadow:rgb(255 255 255 / 12%);
+  --li-border-color:#ffffff10;
 }
 
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
 }
 
+ body {
+  overflow-x: hidden;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: Jost, Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--body-background);
-  color: var(--color);
+  color: var(--primary);
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.accent {
+  color: var(--accent);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700');
+.caveat {
+  font-family: Caveat;
+}

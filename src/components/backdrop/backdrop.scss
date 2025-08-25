@@ -1,0 +1,14 @@
+.backdrop {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0deg, #000000a1, transparent 80%) no-repeat;
+    backdrop-filter: blur(22px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    height: 100vh;
+    overflow-y: hidden;
+}
