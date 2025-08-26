@@ -122,7 +122,10 @@ const Navbar = () => {
     if (setActiveTimeoutId.current) clearTimeout(setActiveTimeoutId.current);
     setActiveTimeoutId.current = setTimeout(() => {
       setActiveSection(path)
-      navigate(path === '' ? '/' : path, { replace: true });
+      window.history.replaceState(null, "", path === '' ? '/' : path);
+      // navigate(path === '' ? '/' : path, { replace: true, preventScrollReset: true });
+      // window.history.replaceState(null, "", `${process.env.PUBLIC_URL}${path === '' ? '/' : `/${path}`}`);
+      window.history.replaceState(null, "", `${process.env.PUBLIC_URL}${path === '' ? '/' : `/${path}`}`);
     }, 500);
   }
 

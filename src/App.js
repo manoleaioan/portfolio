@@ -16,11 +16,14 @@ const App = () => {
 
   const getBaseName = () => {
     const [, firstSegment] = window.location.pathname.split("/");
+    console.log('base: ', firstSegment ? `/${firstSegment}` : "")
     return firstSegment ? `/${firstSegment}` : "";
   };
 
+  console.log(process.env.PUBLIC_URL, "base")
+
   return (
-    <Router basename={getBaseName()}>
+    <Router basename={process.env.PUBLIC_URL}>
       <FirstLoadProvider>
         <PreviousPathProvider>
 
