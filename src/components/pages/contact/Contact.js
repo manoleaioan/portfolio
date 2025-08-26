@@ -29,11 +29,10 @@ const Contact = () => (
         >
           I’m currently available for work. Let’s get in touch!
         </TextEffect>
-
       </div>
 
       <div className='card-container'>
-        <Card delay={1} index={0} inViewMargin="0px 0px 0px 0px">
+        <Card delay={0} index={0} inViewMargin="0px 0px 0px 0px">
           <a target="_blank" rel="noreferrer" href="mailto:ioanmanolea@gmail.com?subject=contact">
             <FontAwesomeIcon icon={faEnvelope} />
             <div>
@@ -43,7 +42,7 @@ const Contact = () => (
           </a>
         </Card>
 
-        <Card delay={1.2} index={1} inViewMargin="0px 0px 0px 0px">
+        <Card delay={0.2} index={1} inViewMargin="0px 0px 0px 0px">
           <a href='tel:+40748495960'>
             <FontAwesomeIcon icon={faPhoneAlt} />
             <div>
@@ -53,7 +52,7 @@ const Contact = () => (
           </a>
         </Card>
 
-        <Card delay={1.4} index={2} inViewMargin="0px 0px 0px 0px">
+        <Card delay={0.4} index={2} inViewMargin="0px 0px 0px 0px">
           <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/in/manoleaioan'>
             <FontAwesomeIcon icon={faLinkedinIn} />
             <div>

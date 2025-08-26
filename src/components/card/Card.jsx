@@ -14,7 +14,7 @@ const Card = ({ children, index, delay = 0.25, inViewMargin = "0px 0px 50px 0px"
         hidden: { opacity: 0, y: 20, filter: 'blur(5px)' },
         show: (i = 0) => ({
             opacity: 1,
-            y: back ? 0 : undefined,
+            y: back ? 0 : 0,
             filter: 'blur(0px)',
             transition: {
                 duration: 1,
