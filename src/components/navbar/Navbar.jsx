@@ -111,7 +111,6 @@ const Navbar = () => {
     if (previousPath?.startsWith('/project/') && (path == -1 || path === 'projects')) {
       window.scrollTo(0, 0);
     }
-
     setActiveSection(path);
     navigate(path);
   }
@@ -122,11 +121,8 @@ const Navbar = () => {
     if (setActiveTimeoutId.current) clearTimeout(setActiveTimeoutId.current);
     setActiveTimeoutId.current = setTimeout(() => {
       setActiveSection(path)
-      window.history.replaceState(null, "", path === '' ? '/' : path);
-      // navigate(path === '' ? '/' : path, { replace: true, preventScrollReset: true });
-      // window.history.replaceState(null, "", `${process.env.PUBLIC_URL}${path === '' ? '/' : `/${path}`}`);
       window.history.replaceState(null, "", `${process.env.PUBLIC_URL}${path === '' ? '/' : `/${path}`}`);
-    }, 500);
+    }, 0);
   }
 
   return (
@@ -164,11 +160,11 @@ const Navbar = () => {
             <nav className={"navigation " + (menuOpen ? " navigation-open" : "")}>
               <ul>
                 <li>
-                  <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('')}>
+                  <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('hero')}>
                     Home
                   </Link>
                   <Link className="navbar-link" to="hero" spy={true} offset={-400} onSetActive={handleOnSetActive} key={sectionId}></Link>
-                  {activeSection === '' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
+                  {(activeSection === '' || activeSection === 'hero') && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
                 </li>
 
                 <li>
