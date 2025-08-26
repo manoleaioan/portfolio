@@ -167,7 +167,7 @@ const Navbar = () => {
                   <Link to="hero" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('')}>
                     Home
                   </Link>
-                  <Link className="navbar-link" to="hero" spy={true} offset={-800} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  <Link className="navbar-link" to="hero" spy={true} offset={-400} onSetActive={handleOnSetActive} key={sectionId}></Link>
                   {activeSection === '' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
                 </li>
 
@@ -175,7 +175,7 @@ const Navbar = () => {
                   <Link to="skills" smooth={true} duration={750} offset={-55} onClick={() => onNavClick('skills')}>
                     SKILLS
                   </Link>
-                  <Link className="navbar-link" to="skills" spy={true} offset={-800} onSetActive={handleOnSetActive} key={sectionId}></Link>
+                  <Link className="navbar-link" to="skills" spy={true} offset={-400} onSetActive={handleOnSetActive} key={sectionId}></Link>
                   {activeSection === 'skills' && <motion.div className='navbar__activeLink' layoutId='indicator'></motion.div>}
                 </li>
 
